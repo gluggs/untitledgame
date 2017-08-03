@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "logic/main.c"
+#include "logic/gamestate.c"
 
 int main(char** args) {
 	printf("hello world\n");
