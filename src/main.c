@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "game.c"
+#include "engine/game.c"
 
 int main(int argc, char** argv) {
 	printf("hello world\n");

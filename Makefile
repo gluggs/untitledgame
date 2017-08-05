@@ -10,4 +10,4 @@ bin/game: src/ src/assets.c
 	gcc -Wall src/main.c -o $@
 
 src/assets.c: assets/
-	for file in $(shell find assets/ -type f); do xxd -i $$file; done > $@
+	for file in $(shell find assets/include/ -type f); do xxd -i $$file; done > $@

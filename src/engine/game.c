@@ -1,5 +1,4 @@
-#include "logic/gamestate.c"
-#include "logic/character.c"
+#include "gamestate.c"
 
 void gamestate_dotick(gamestate* st) {
 	struct entitylink* en = st->entities;
