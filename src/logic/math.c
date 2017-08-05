@@ -1,34 +1,30 @@
 #pragma once
 
 #include <stdint.h>
+#include <stdbool.h>
 
 typedef struct {
 	int64_t x,y;
 } vec2;
 
 vec2 v2add(vec2 a, vec2 b) {
-	vec2 r = {a.x + b.x, a.y + b.y};
-	return r;
+	return (vec2){a.x + b.x, a.y + b.y};
 }
 
 vec2 v2sub(vec2 a, vec2 b) {
-	vec2 r = {a.x - b.x, a.y - b.y};
-	return r;
+	return (vec2){a.x - b.x, a.y - b.y};
 }
 
 vec2 v2mul(vec2 a, int64_t b) {
-	vec2 r = {a.x * b, a.y * b};
-	return r;
+	return (vec2){a.x * b, a.y * b};
 }
 
 vec2 v2div(vec2 a, int64_t b) {
-	vec2 r = {a.x / b, a.y / b};
-	return r;
+	return (vec2){a.x / b, a.y / b};
 }
 
 vec2 v2cmul(vec2 a, vec2 b) {
-	vec2 r = {a.x * b.x - a.y * b.y, a.x * b.y + a.y * b.x};
-	return r;
+	return (vec2){a.x * b.x - a.y * b.y, a.x * b.y + a.y * b.x};
 }
 
 int64_t v2wedge(vec2 a, vec2 b) {
@@ -54,11 +50,6 @@ bool s2int(seg2 a, seg2 b) {
 		v2wedge(b_end_rel, v2sub(a.start, b.start)) *
 		v2wedge(b_end_rel, v2sub(a.end, b.start)) < 0;
 	return a_sep_b && b_sep_a;
-}
-
-vec2 v2new(int64_t x, int64_t y) {
-	vec2 r = {x, y};
-	return r;
 }
 
 uint64_t isqrt(uint64_t x) {
